@@ -1,9 +1,9 @@
 import logging
-import config
+from app.config import config
 
 logging.basicConfig(
-    level=config.LOGGING_LEVEL,
+    level=getattr(logging, config.LOGGING_LEVEL.upper(), logging.INFO),
     format="%(asctime)s [%(levelname)s] %(message)s"
 )
 
-logger = logging.getLogger(__name__)
+logger = logging.getLogger("app")

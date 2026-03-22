@@ -6,4 +6,6 @@ COPY . .
 
 RUN pip install -r requirements.txt
 
-CMD ["python", "app/main.py"]
+ENV PYTHONUNBUFFERED=1
+ENV PYTHONPATH=/app
+CMD ["python", "-m", "app.main"]
