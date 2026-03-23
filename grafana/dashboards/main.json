@@ -23,7 +23,7 @@
     {
       "datasource": {
         "type": "grafana-postgresql-datasource",
-        "uid": "ffgrkxvutezgge"
+        "uid": "postgres_ds"
       },
       "fieldConfig": {
         "defaults": {
@@ -105,6 +105,10 @@
       "targets": [
         {
           "dataset": "weather",
+          "datasource": {
+            "type": "postgres",
+            "uid": "postgres_ds"
+          },
           "editorMode": "code",
           "format": "table",
           "rawQuery": true,
@@ -134,8 +138,8 @@
     },
     {
       "datasource": {
-        "type": "grafana-postgresql-datasource",
-        "uid": "ffgrkxvutezgge"
+        "type": "postgres",
+        "uid": "postgres_ds"
       },
       "fieldConfig": {
         "defaults": {
@@ -219,7 +223,7 @@
           "dataset": "weather",
           "datasource": {
             "type": "grafana-postgresql-datasource",
-            "uid": "ffgrkxvutezgge"
+            "uid": "efgvg4psxmgw0f"
           },
           "editorMode": "code",
           "format": "time_series",
@@ -263,6 +267,6 @@
   "timezone": "browser",
   "title": "Temperatura",
   "uid": "adqjqdj",
-  "version": 4,
+  "version": 1,
   "weekStart": ""
 }
