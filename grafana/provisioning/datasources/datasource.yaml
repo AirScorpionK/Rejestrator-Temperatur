@@ -1,12 +1,22 @@
 apiVersion: 1
 
+deleteDatasources:
+  - name: Postgres
+
 datasources:
   - name: Postgres
     uid: postgres_ds
     type: postgres
     access: proxy
     url: db:5432
-    user: ${DB_USERNAME}
+    user: ${DB_USER}
+    database: ${DB_NAME}
     secureJsonData:
       password: ${DB_PASSWORD}
-    database: ${DB_NAME}
+    jsonData:
+      database: ${DB_NAME}
+      sslmode: 'disable'
+      postgresVersion: '1800'
+      timescaledb: false
+    isDefault: true
+    editable: true
